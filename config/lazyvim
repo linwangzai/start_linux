@@ -1,0 +1,58 @@
+lazyvim 下载：https://github.com/LazyVim/LazyVim?tab=readme-ov-file    https://www.lazyvim.org/installation
+
+lazyvim 检查： 执行nvim，  进入后执行 :checkhealth 会检查各个插件的问题，哪个有问题，查一下怎么解决即可。
+
+lazyvim 常用操作
+  黏贴：可以使用shift + insert 来粘贴从windows端复制的内容到nvim 中！ 复制就还是shift选中
+
+lazyvim 插件：
+  - NeoTree
+    1. 打开/关闭 NeoTree：<leader>e 或 <C-n>（具体取决于配置）， 查看插件文档 ： help neo-tree。
+    2.  / 在当前工作目录中检索文件
+    3.  命令行示例 :Neotree action=show source=buffers position=right toggle=true
+      source：
+        filesystem：显示文件列表，这是默认选项。
+        buffers：显示当前打开的缓冲区列表。 页签
+        git_status：显示 git status 的输出，并以树状结构展示文件的状态。
+      position：
+        left：作为左侧边栏打开，这是默认选项。
+        right：作为右侧边栏打开。
+        float：以浮动窗口的形式打开。
+      dir：
+        指定 Neo-tree 要显示的根目录。
+      git_base：
+        用于计算每个目录或文件的 Git 状态的基准。默认值是 HEAD，它显示所有尚未提交的更改。
+      map 映射：
+        ? 对应快捷键 映射表
+        .             = set_root:    Changes the root directory to the currently elected folder.
+        <bs> = navigate_up: 将根目录上移一级。
+        C = close_node: 如果节点是展开状态则关闭，否则关闭其父节点。
+        z = close_all_nodes: 关闭所有节点。
+        <space> = toggle_node: 展开额外指令列表
+        < 跟 > 切换source，也就是filesystem，buffers，git_status之间切换
+        P = toggle_preview: 切换“预览模式”，详见 neo-tree-preview-mode。也就是移动到文件就直接显示文件内容，在当前模式在再按l，切换焦点至预览窗口
+        S = open_split: 打开文件，并在水平分割窗口中显示。
+        s = open_vsplit: 打开文件，并在垂直分割窗口中显示。
+        [g = prev_git_modified: 跳转到当前工作目录中上一个通过 git status 报告的修改文件。到最后一个文件时会循环到第一个文件。
+        ]g = next_git_modified: 跳转到当前工作目录中下一个通过 git status 报告的修改文件。到最后一个文件时会循环到第一个文件。
+        a = add: 创建一个新文件或目录。如果在名称后加上 /，则会创建一个目录。
+        A = add_directory。
+        d = delete。删除选中的文件或目录。此操作支持在可视模式下选择多个文件进行删除。
+        i = show_file_details: 显示文件的详细信息，如文件大小和最后修改日期，在弹出窗口中展示。
+        r = rename  重命名选中的文件或目录。
+        y = copy_to_clipboard: 将文件标记为复制。支持在可视模式下选择多个文件。
+        x = cut_to_clipboard:  将文件标记为剪切（移动）。支持在可视模式下选择多个文件。
+        p = paste_from_clipboard:  将标记为复制或剪切的文件粘贴到选中的文件夹中。
+        c = copy: 复制选中的文件或目录。此操作也支持 config.show_path 选项，用于控制路径显示方式。
+        m = move: 移动选中的文件或目录。此操作也支持 config.show_path 选项。
+        H = toggle_hidden 作用：切换是否显示被过滤的项目，比如隐藏文件（以 . 开头的文件）或其他通过过滤配置隐藏的文件。
+        o = order_by... 作用：显示排序选项的帮助菜单。
+
+        / : 检索文件和文件夹，使用的是fd 或者是find
+        D = fuzzy_finder_directory  作用：与 fuzzy_finder 类似，但只显示目录。
+        # = fuzzy_sorter 作用：基于 fzy 算法对目录树中的文件进行递归排序，按得分显示最佳匹配的文件。空格分隔的关键词会被视为 AND 逻辑，可以更精准地缩小搜索范围。文件列表来源于 fd 或类似工具。
+        f = filter_on_submit 作用：类似于 fuzzy_finder，但它不会实时搜索，而是等你按下 <enter> 键后才开始搜索。
+        <C-x> = clear_filter  作用：清除当前的过滤条件。
+        上面这几个检索，如果是文件库比较大的时候建议 f， 要不然容易卡死，精细检索等待可以使用 # 
+
+        
