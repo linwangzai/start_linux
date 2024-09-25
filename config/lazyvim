@@ -4,6 +4,28 @@ lazyvim 检查： 执行nvim，  进入后执行 :checkhealth 会检查各个插
 
 lazyvim 常用操作
   黏贴：可以使用shift + insert 来粘贴从windows端复制的内容到nvim 中！ 复制就还是shift选中
+  <C-Up>	增大窗口高度
+  <C-Down>	减小窗口高度
+  <C-Left>	减小窗口宽度
+  <C-Right>	增大窗口宽度
+  <C-s>	保存文件
+  <leader>wd	删除窗口
+  <leader>w-	在下方分割窗口
+  <leader>w|	在右侧分割窗口
+  <leader>-	在右侧分割窗口
+  <leader>|	在下方分割窗口
+  缓冲区的操作 --已忽略，同意用点击选中，和右键删除了。
+  <leader>snl - Noice Last Message
+  <leader>snh	Noice History 这两个看消息历史
+  <leader>sr	在文件中替换(Spectre)  替换字符串 ，非常好用。
+
+  telescope
+  <leader>/	在root dir中查找(Grep),需要配合root dir设置使用， 要不然不好用
+  <leader><space>	查找文件 (root 目录)
+  <leader>ff	查找文件 (root 目录)
+  <leader>fF	查找文件 (cwd 目录) 启动 Neovim 时的工作目录 ，Current Working Directory
+  <leader>gc	commits
+
 
 lazyvim 插件：
   - NeoTree
